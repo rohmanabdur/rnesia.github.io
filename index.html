@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="pingback" href="http://abdurrohman.my.id/xmlrpc.php">
+<title>Instalasi R pada Ubuntu LTS 20.04 &#8211; Abdur Rohman</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Abdur Rohman &raquo; Feed" href="http://abdurrohman.my.id/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Abdur Rohman &raquo; Comments Feed" href="http://abdurrohman.my.id/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Abdur Rohman &raquo; Instalasi R pada Ubuntu LTS 20.04 Comments Feed" href="http://abdurrohman.my.id/instalasi-r-pada-ubuntu-20/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/abdurrohman.my.id\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.4"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='dashicons-css'  href='http://abdurrohman.my.id/wp-includes/css/dashicons.min.css?ver=5.4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='admin-bar-css'  href='http://abdurrohman.my.id/wp-includes/css/admin-bar.min.css?ver=5.4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='http://abdurrohman.my.id/wp-includes/css/dist/block-library/style.min.css?ver=5.4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='dlm-frontend-css'  href='http://abdurrohman.my.id/wp-content/plugins/download-monitor/assets/css/frontend.css?ver=5.4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='graphy-font-css'  href='https://fonts.googleapis.com/css?family=Source+Serif+Pro%3A400%7CLora%3A400%2C400italic%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='http://abdurrohman.my.id/wp-content/themes/graphy/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='normalize-css'  href='http://abdurrohman.my.id/wp-content/themes/graphy/css/normalize.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='graphy-style-css'  href='http://abdurrohman.my.id/wp-content/themes/graphy/style.css?ver=2.3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='http://abdurrohman.my.id/wp-content/plugins/tablepress/css/default.min.css?ver=1.11' type='text/css' media='all' />
+<script type='text/javascript' src='http://abdurrohman.my.id/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='http://abdurrohman.my.id/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://abdurrohman.my.id/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://abdurrohman.my.id/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://abdurrohman.my.id/wp-includes/wlwmanifest.xml" /> 
+<link rel='next' title='Instalasi RStudio pada Ubuntu LTS 20.04' href='http://abdurrohman.my.id/instalasi-rstudio-pada-ubuntu-20/' />
+<meta name="generator" content="WordPress 5.4.4" />
+<link rel="canonical" href="http://abdurrohman.my.id/instalasi-r-pada-ubuntu-20/" />
+<link rel='shortlink' href='http://abdurrohman.my.id/?p=10' />
+<link rel="alternate" type="application/json+oembed" href="http://abdurrohman.my.id/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fabdurrohman.my.id%2Finstalasi-r-pada-ubuntu-20%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://abdurrohman.my.id/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fabdurrohman.my.id%2Finstalasi-r-pada-ubuntu-20%2F&#038;format=xml" />
+	<style type="text/css">
+		/* Colors */
+				
+			</style>
+	<style type="text/css" media="print">#wpadminbar { display:none; }</style>
+	<style type="text/css" media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+</style>
+	</head>
+
+<body class="post-template-default single single-post postid-10 single-format-standard logged-in admin-bar no-customize-support no-sidebar footer-0 has-avatars">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header">
+
+		<div class="site-branding">
+					<div class="site-title"><a href="http://abdurrohman.my.id/" rel="home">Abdur Rohman</a></div>
+						<div class="site-description">Berakar kuat, berbuah lebat, dan bermanfaat</div>
+						</div><!-- .site-branding -->
+
+				<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle"><span class="menu-text">Menu</span></button>
+			<div class="menu"><ul>
+<li ><a href="http://abdurrohman.my.id/">Home</a></li></ul></div>
+						<form role="search" method="get" class="search-form" action="http://abdurrohman.my.id/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>					</nav><!-- #site-navigation -->
+		
+		
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+		
+			
+<div class="post-full post-full-summary">
+	<article id="post-10" class="post-10 post type-post status-publish format-standard has-post-thumbnail hentry category-r tag-lts-20-04 tag-r tag-ubuntu">
+		<header class="entry-header">
+			<div class="cat-links"><a rel="category tag" href="http://abdurrohman.my.id/category/r/" class="category category-2">Tutorial R</a></div><!-- .cat-links -->
+			<h1 class="entry-title">Instalasi R pada Ubuntu LTS 20.04</h1>
+				<div class="entry-meta">
+		Posted		<span class="posted-on">on		<a href="http://abdurrohman.my.id/instalasi-r-pada-ubuntu-20/" rel="bookmark"><time class="entry-date published updated" datetime="2020-07-02T22:27:00+07:00">July 2, 2020</time></a>		</span>
+		<span class="byline">by			<span class="author vcard">
+				<a class="url fn n" href="http://abdurrohman.my.id/author/abdur/" title="View all posts by abdur"><span class="author-name">abdur</span></a>
+			</span>
+		</span>
+					<span class="entry-meta-sep"> / </span>
+			<span class="comments-link">
+				<a href="http://abdurrohman.my.id/instalasi-r-pada-ubuntu-20/#respond">0 Comment</a>			</span>
+			</div><!-- .entry-meta -->
+							<div class="post-thumbnail"><img width="677" height="710" src="http://abdurrohman.my.id/wp-content/uploads/2020/07/hist.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://abdurrohman.my.id/wp-content/uploads/2020/07/hist.png 677w, http://abdurrohman.my.id/wp-content/uploads/2020/07/hist-286x300.png 286w, http://abdurrohman.my.id/wp-content/uploads/2020/07/hist-600x629.png 600w" sizes="(max-width: 677px) 100vw, 677px" /></div>
+					</header><!-- .entry-header -->
+
+		<div class="entry-content">
+			
+<p>Paket perangkat lunak <strong>R </strong>yang siap untuk di-install di komputer kita disediakan dan diperbarui oleh <strong>R Core Development Team</strong> yang tergabung dalam sebuah organisasi nirlaba bernama <strong><a href="https://www.r-project.org/foundation/">R Foundation</a></strong>. Installer untuk R  tersedia di <a href="https://cran.r-project.org/">CRAN (Comprehensive R Archive Network)</a>. </p>
+
+
+
+<p><strong>Linux Ubuntu </strong>merupakan sebuah sistem operasi yang diterbitkan oleh sebuah perusahaan bernama <em><a href="https://canonical.com/">Canonical</a></em>. Tidak seperti sistem operasi <em>Windows</em> yang haruskita beli dari Microsoft dengan harga mahal, Linux Ubuntu dapat kita unduh, install, dan gunakan secara <strong>gratis</strong>. </p>
+
+
+
+<p>Saya menggunakan Ubuntu versi 20.04 yang dirilis pada bulan April 2020. Versi ini merupakan versi<a href="https://ubuntu.com/about/release-cycle"> <em>Long-Term Support</em> </a>(LTS) yang berarti akan terus didukung pemeliharaannya oleh Canonical dalam jangka waktu lama, yaitu 5 tahun untuk <em>maintenance updates</em> yang gratis dan 5 tahun berikutnya untuk <em>Extended</em> <em>Security Maintenance </em>yang berbayar. Kabar baiknya, Canonical menyediakan  <em>Extended</em> <em>Security Maintenance</em> secara gratis dengan syarat tertentu dalam batas tertentu  untuk Ubuntu LTS 14.04 yang sudah memasuki periode 5 tahun kedua (selengkapnya bisa dilihat <a href="https://ubuntu.com/blog/ua-services-deployed-from-the-command-line-with-ua-client">di sini</a>). Berita ini menunjukkan adanya kemungkinan yang sama untuk versi setelah LTS 14.04. </p>
+
+
+
+<p>Dalam artikel ini saya akan menjelaskan langkah-langkah untuk instalasi <strong>R</strong> versi 4.0.2 pada Linux Ubuntu 20.04. Pastikan selama proses instalasi berlangsung, komputer Anda terhubung dengan internet<strong>.</strong></p>
+
+
+
+<h2>#1 : Buka <em>Terminal</em></h2>
+
+
+
+<p>Terminal dapat dibuka dari menu atau dengan menekan ketiga tombol <strong>Ctrl Alt T</strong> secara bersamaan. Pastikan kita memiliki akses sebagai administrator di komputer yang digunakan karena akan diminta memasukkan password. </p>
+
+
+
+<h2>#2 : Masukkan Kunci</h2>
+
+
+
+<p>Kunci (<em>key</em>) merupakan tanda keaslian paket R yang diunduh dari CRAN. Kunci untuk pemasangan paket R pada Ubuntu ini bisa didapatkan dengan menyalin teks berikut (setelah tanda dolar $) ke Terminal, lalu tekan <strong><em>Enter.</em></strong> </p>
+
+
+
+<p><em><strong>Tips</strong> : Untuk copy teks berikut, kita dapat menggunakan Ctrl+C, tapi untuk paste pada Terminal, gunakan klik kanan lalu <strong>Paste</strong>, bukan Ctrl+V.</em></p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9</code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img src="http://abdurrohman.my.id/wp-content/uploads/2020/07/sudo0-700x136.png" alt="" class="wp-image-105" srcset="http://abdurrohman.my.id/wp-content/uploads/2020/07/sudo0-700x136.png 700w, http://abdurrohman.my.id/wp-content/uploads/2020/07/sudo0-300x58.png 300w, http://abdurrohman.my.id/wp-content/uploads/2020/07/sudo0-600x117.png 600w, http://abdurrohman.my.id/wp-content/uploads/2020/07/sudo0.png 734w" sizes="(max-width: 700px) 100vw, 700px" /><figcaption>Contoh tampilan pada Terminal</figcaption></figure>
+
+
+
+<h2>#3 Siapkan Jalur Unduh</h2>
+
+
+
+<p>Jalankan kode berikut ini pada Terminal:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt install gedit</code></pre>
+
+
+
+<p>kemudian</p>
+
+
+
+<pre class="wp-block-code"><code>sudo gedit /etc/apt/sources.list</code></pre>
+
+
+
+<p>Akan muncul halaman <em>file </em><strong>sources.list</strong> yang berisi teks seperti pada gambar di bawah ini.  File ini terletak pada folder /etc/apt. </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="http://abdurrohman.my.id/wp-content/uploads/2020/07/source-700x542.png" alt="" class="wp-image-107" srcset="http://abdurrohman.my.id/wp-content/uploads/2020/07/source-700x542.png 700w, http://abdurrohman.my.id/wp-content/uploads/2020/07/source-300x232.png 300w, http://abdurrohman.my.id/wp-content/uploads/2020/07/source-768x595.png 768w, http://abdurrohman.my.id/wp-content/uploads/2020/07/source-800x620.png 800w, http://abdurrohman.my.id/wp-content/uploads/2020/07/source-600x465.png 600w, http://abdurrohman.my.id/wp-content/uploads/2020/07/source.png 901w" sizes="(max-width: 700px) 100vw, 700px" /></figure>
+
+
+
+<p></p>
+
+
+
+<p>Untuk instalasi R versi 4.0.2, salin (<em>copy</em>) lalu tempel (<em>paste</em>) teks berikut ini ke dalam halaman sources.list tersebut. Bisa ditempel di mana saja, misalnya di baris paling bawah. Setelah teks itu disalin, klik <strong>Save</strong>, lalu tutup <em>file</em> sources.list itu.</p>
+
+
+
+<pre class="wp-block-code"><code>deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/</code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img src="http://abdurrohman.my.id/wp-content/uploads/2020/07/deb-1-700x92.png" alt="" class="wp-image-110" srcset="http://abdurrohman.my.id/wp-content/uploads/2020/07/deb-1-700x92.png 700w, http://abdurrohman.my.id/wp-content/uploads/2020/07/deb-1-300x39.png 300w, http://abdurrohman.my.id/wp-content/uploads/2020/07/deb-1-768x101.png 768w, http://abdurrohman.my.id/wp-content/uploads/2020/07/deb-1-800x105.png 800w, http://abdurrohman.my.id/wp-content/uploads/2020/07/deb-1-600x79.png 600w, http://abdurrohman.my.id/wp-content/uploads/2020/07/deb-1.png 889w" sizes="(max-width: 700px) 100vw, 700px" /></figure>
+
+
+
+<p>Setelah itu, pada Terminal jalankan kode berikut:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get update</code></pre>
+
+
+
+<p>Pada tahap ini kita sudah menyambungkan komputer kita dengan repository tempat installer R berada di CRAN sehingga komputer kita sudah siap untuk instalasi R. </p>
+
+
+
+<h2>#4 Mulai<em> </em>Instalasi</h2>
+
+
+
+<p>Setelah update selesai, mulai instalasi dengan menjalankan kode berikut:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install r-base</code></pre>
+
+
+
+<p>Saat muncul pertanyaan :</p>
+
+
+
+<pre class="wp-block-code"><code>Do you want to continue? &#91;Y/n] </code></pre>
+
+
+
+<p>Ketik : </p>
+
+
+
+<pre class="wp-block-code"><code>y</code></pre>
+
+
+
+<p>lalu tekan <strong><em>Enter</em></strong>.  </p>
+
+
+
+<p>Kita akan melihat progress instalasi. Biasanya ini akan berlangsung beberapa menit. </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="http://abdurrohman.my.id/wp-content/uploads/2020/07/progress-700x444.png" alt="" class="wp-image-116" srcset="http://abdurrohman.my.id/wp-content/uploads/2020/07/progress-700x444.png 700w, http://abdurrohman.my.id/wp-content/uploads/2020/07/progress-300x190.png 300w, http://abdurrohman.my.id/wp-content/uploads/2020/07/progress-600x380.png 600w, http://abdurrohman.my.id/wp-content/uploads/2020/07/progress.png 743w" sizes="(max-width: 700px) 100vw, 700px" /><figcaption>Contoh tampilan pada Terminal saat instalasi berlangsung. </figcaption></figure>
+
+
+
+<p>Ketika sudah 100% tercapai, proses ini akan berhenti. Pada tahap ini instalasi <strong>R</strong> sudah selesai. </p>
+
+
+
+<h2>#5 Cek Keberhasilan Instalasi</h2>
+
+
+
+<p>Untuk mengecek apakah instalasi berhasil, dan apakah versi R yang terpasang sudah sesuai dengan target, pada terminal jalankan (setelah tanda dolar $):</p>
+
+
+
+<pre class="wp-block-code"><code>R</code></pre>
+
+
+
+<p>Bila instalasi berhasil, akan muncul tampilan:</p>
+
+
+
+<pre class="wp-block-code"><code>R version 4.0.2 (2020-06-22) -- "Taking Off Again"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+</code></pre>
+
+
+
+<p>Kita kemudian bisa mencoba menjalankan kode di R dengan menjalankan kode:</p>
+
+
+
+<p>Misalkan kita ingin menampilkan &#8220;Assalamualaikum&#8221;. Bisa Anda jalankan:</p>
+
+
+
+<pre class="wp-block-code"><code>> print("Assalamualaikum")</code></pre>
+
+
+
+<p>Akan muncul</p>
+
+
+
+<pre class="wp-block-code"><code>&#91;1] "Assalamualaikum"
+</code></pre>
+
+
+
+<p>Anda juga bisa menampilkan gambar hasil analisis data. Sebagai contoh, Anda ingin menampilkan histogram dari 1000 bilangan acak yang terdistribusi Normal. Bisa Anda jalankan kode berikut.</p>
+
+
+
+<pre class="wp-block-code"><code>> hist(rnorm(1000))</code></pre>
+
+
+
+<p>Akan muncul gambar histogram:</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="http://abdurrohman.my.id/wp-content/uploads/2020/07/hist.png" alt="" class="wp-image-122" srcset="http://abdurrohman.my.id/wp-content/uploads/2020/07/hist.png 677w, http://abdurrohman.my.id/wp-content/uploads/2020/07/hist-286x300.png 286w, http://abdurrohman.my.id/wp-content/uploads/2020/07/hist-600x629.png 600w" sizes="(max-width: 677px) 100vw, 677px" /></figure>
+
+
+
+<p>Untuk menutup sesi di R, jalankan kode:</p>
+
+
+
+<pre class="wp-block-code"><code>>q()</code></pre>
+
+
+
+<p>Akan muncul pertanyaan:</p>
+
+
+
+<pre class="wp-block-code"><code>Save workspace image? &#91;y/n/c]: </code></pre>
+
+
+
+<p>Kalau Anda ingin menyimpan semua yang sudah dihasilkan pada sesi sebelumnya, ketik <em>y</em>. </p>
+
+
+
+<p>Kalau Anda tidak ingin menyimpannya, ketik <em>n</em>. </p>
+
+
+
+<p>Kalau Anda tidak jadi menutup sesi, dan ingin melanjutkan sesi di R, ketik <em>c</em>. </p>
+
+
+
+<p>Demikian semoga bermanfaat. </p>
+
+
+
+<p></p>
+					</div><!-- .entry-content -->
+
+				<div class="tags-links">
+			<a href="http://abdurrohman.my.id/tag/lts-20-04/" rel="tag">LTS 20.04</a>, <a href="http://abdurrohman.my.id/tag/r/" rel="tag">R</a>, <a href="http://abdurrohman.my.id/tag/ubuntu/" rel="tag">Ubuntu</a>		</div>
+		
+			<div class="author-profile">
+		<div class="author-profile-avatar">
+			<img alt='' src='http://0.gravatar.com/avatar/6dc4996c90ea3a85740bffa3f67cebd6?s=90&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/6dc4996c90ea3a85740bffa3f67cebd6?s=180&#038;d=mm&#038;r=g 2x' class='avatar avatar-90 photo' height='90' width='90' />		</div><!-- .author-profile-avatar -->
+		<div class="author-profile-meta">
+			<div class="author-profile-name"><strong>abdur</strong></div>
+								</div><!-- .author-profile-meta -->
+		<div class="author-profile-description">
+						<a class="author-profile-description-link" href="http://abdurrohman.my.id/author/abdur/" rel="author">View all posts by abdur &rarr;</a>
+		</div><!-- .author-profile-description -->
+	</div><!-- .author-profile -->
+	
+	</article><!-- #post-## -->
+</div><!-- .post-full -->
+
+	<nav class="navigation post-navigation">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+			<div class="nav-next"><div class="post-nav-title">Newer post</div><a href="http://abdurrohman.my.id/instalasi-rstudio-pada-ubuntu-20/" rel="next">Instalasi RStudio pada Ubuntu LTS 20.04</a></div>		</div><!-- .nav-links -->
+	</nav><!-- .post-navigation -->
+	
+
+			
+<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/instalasi-r-pada-ubuntu-20/#respond" style="display:none;">Cancel reply</a></small></h3><form action="http://abdurrohman.my.id/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="logged-in-as"><a href="http://abdurrohman.my.id/wp-admin/profile.php" aria-label="Logged in as abdur. Edit your profile.">Logged in as abdur</a>. <a href="http://abdurrohman.my.id/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Fabdurrohman.my.id%2Finstalasi-r-pada-ubuntu-20%2F&amp;_wpnonce=397516a4de">Log out?</a></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='10' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><input type="hidden" id="_wp_unfiltered_html_comment_disabled" name="_wp_unfiltered_html_comment_disabled" value="82ea42cddc" /><script>(function(){if(window===window.parent){document.getElementById('_wp_unfiltered_html_comment_disabled').name='_wp_unfiltered_html_comment';}})();</script>
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="187"/></p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer">
+
+		
+		<div class="site-bottom">
+
+			<div class="site-info">
+				<div class="site-copyright">
+					&copy; 2020 <a href="http://abdurrohman.my.id/" rel="home">Abdur Rohman</a>
+				</div><!-- .site-copyright -->
+				<div class="site-credit">
+					Powered by <a href="https://wordpress.org/">WordPress</a>				<span class="site-credit-sep"> | </span>
+					Theme: <a href="http://themegraphy.com/wordpress-themes/graphy/">Graphy</a> by Themegraphy				</div><!-- .site-credit -->
+			</div><!-- .site-info -->
+
+		</div><!-- .site-bottom -->
+
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type='text/javascript' src='http://abdurrohman.my.id/wp-includes/js/hoverintent-js.min.js?ver=2.2.1'></script>
+<script type='text/javascript' src='http://abdurrohman.my.id/wp-includes/js/admin-bar.min.js?ver=5.4.4'></script>
+<script type='text/javascript' src='http://abdurrohman.my.id/wp-content/themes/graphy/js/skip-link-focus-fix.js?ver=20160525'></script>
+<script type='text/javascript' src='http://abdurrohman.my.id/wp-content/themes/graphy/js/navigation.js?ver=20160525'></script>
+<script type='text/javascript' src='http://abdurrohman.my.id/wp-content/themes/graphy/js/doubletaptogo.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='http://abdurrohman.my.id/wp-includes/js/comment-reply.min.js?ver=5.4.4'></script>
+<script type='text/javascript' src='http://abdurrohman.my.id/wp-content/themes/graphy/js/functions.js?ver=20160822'></script>
+<script type='text/javascript' src='http://abdurrohman.my.id/wp-includes/js/wp-embed.min.js?ver=5.4.4'></script>
+	<!--[if lte IE 8]>
+		<script type="text/javascript">
+			document.body.className = document.body.className.replace( /(^|\s)(no-)?customize-support(?=\s|$)/, '' ) + ' no-customize-support';
+		</script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+		<script type="text/javascript">
+			(function() {
+				var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+						request = true;
+		
+				b[c] = b[c].replace( rcs, ' ' );
+				// The customizer requires postMessage and CORS (if the site is cross domain).
+				b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+			}());
+		</script>
+	<!--<![endif]-->
+			<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul id='wp-admin-bar-root-default' class="ab-top-menu"><li id='wp-admin-bar-wp-logo' class="menupop"><a class='ab-item' aria-haspopup="true" href='http://abdurrohman.my.id/wp-admin/about.php'><span class="ab-icon"></span><span class="screen-reader-text">About WordPress</span></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-wp-logo-default' class="ab-submenu"><li id='wp-admin-bar-about'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/about.php'>About WordPress</a></li></ul><ul id='wp-admin-bar-wp-logo-external' class="ab-sub-secondary ab-submenu"><li id='wp-admin-bar-wporg'><a class='ab-item' href='https://wordpress.org/'>WordPress.org</a></li><li id='wp-admin-bar-documentation'><a class='ab-item' href='https://codex.wordpress.org/'>Documentation</a></li><li id='wp-admin-bar-support-forums'><a class='ab-item' href='https://wordpress.org/support/'>Support</a></li><li id='wp-admin-bar-feedback'><a class='ab-item' href='https://wordpress.org/support/forum/requests-and-feedback'>Feedback</a></li></ul></div></li><li id='wp-admin-bar-site-name' class="menupop"><a class='ab-item' aria-haspopup="true" href='http://abdurrohman.my.id/wp-admin/'>Abdur Rohman</a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-site-name-default' class="ab-submenu"><li id='wp-admin-bar-dashboard'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/'>Dashboard</a></li></ul><ul id='wp-admin-bar-appearance' class="ab-submenu"><li id='wp-admin-bar-themes'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/themes.php'>Themes</a></li><li id='wp-admin-bar-widgets'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/widgets.php'>Widgets</a></li><li id='wp-admin-bar-menus'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/nav-menus.php'>Menus</a></li><li id='wp-admin-bar-header' class="hide-if-customize"><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/themes.php?page=custom-header'>Header</a></li></ul></div></li><li id='wp-admin-bar-customize' class="hide-if-no-customize"><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/customize.php?url=http%3A%2F%2Fabdurrohman.my.id%2Finstalasi-r-pada-ubuntu-20%2F'>Customize</a></li><li id='wp-admin-bar-updates'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/update-core.php' title='3 Plugin Updates, 5 Theme Updates'><span class="ab-icon"></span><span class="ab-label">8</span><span class="screen-reader-text">3 Plugin Updates, 5 Theme Updates</span></a></li><li id='wp-admin-bar-comments'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/edit-comments.php'><span class="ab-icon"></span><span class="ab-label awaiting-mod pending-count count-0" aria-hidden="true">0</span><span class="screen-reader-text comments-in-moderation-text">0 Comments in moderation</span></a></li><li id='wp-admin-bar-new-content' class="menupop"><a class='ab-item' aria-haspopup="true" href='http://abdurrohman.my.id/wp-admin/post-new.php'><span class="ab-icon"></span><span class="ab-label">New</span></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-new-content-default' class="ab-submenu"><li id='wp-admin-bar-new-post'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/post-new.php'>Post</a></li><li id='wp-admin-bar-new-media'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/media-new.php'>Media</a></li><li id='wp-admin-bar-new-page'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/post-new.php?post_type=page'>Page</a></li><li id='wp-admin-bar-new-dlm_download'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/post-new.php?post_type=dlm_download'>Download</a></li><li id='wp-admin-bar-new-user'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/user-new.php'>User</a></li></ul></div></li><li id='wp-admin-bar-edit'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/post.php?post=10&#038;action=edit'>Edit Post</a></li></ul><ul id='wp-admin-bar-top-secondary' class="ab-top-secondary ab-top-menu"><li id='wp-admin-bar-search' class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="http://abdurrohman.my.id/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150" /><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search"/></form></div></li><li id='wp-admin-bar-my-account' class="menupop with-avatar"><a class='ab-item' aria-haspopup="true" href='http://abdurrohman.my.id/wp-admin/profile.php'>Howdy, <span class="display-name">abdur</span><img alt='' src='http://0.gravatar.com/avatar/6dc4996c90ea3a85740bffa3f67cebd6?s=26&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/6dc4996c90ea3a85740bffa3f67cebd6?s=52&#038;d=mm&#038;r=g 2x' class='avatar avatar-26 photo' height='26' width='26' /></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-user-actions' class="ab-submenu"><li id='wp-admin-bar-user-info'><a class='ab-item' tabindex="-1" href='http://abdurrohman.my.id/wp-admin/profile.php'><img alt='' src='http://0.gravatar.com/avatar/6dc4996c90ea3a85740bffa3f67cebd6?s=64&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/6dc4996c90ea3a85740bffa3f67cebd6?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /><span class='display-name'>abdur</span></a></li><li id='wp-admin-bar-edit-profile'><a class='ab-item' href='http://abdurrohman.my.id/wp-admin/profile.php'>Edit My Profile</a></li><li id='wp-admin-bar-logout'><a class='ab-item' href='http://abdurrohman.my.id/wp-login.php?action=logout&#038;_wpnonce=397516a4de'>Log Out</a></li></ul></div></li></ul>			</div>
+						<a class="screen-reader-shortcut" href="http://abdurrohman.my.id/wp-login.php?action=logout&#038;_wpnonce=397516a4de">Log Out</a>
+					</div>
+
+		
+</body>
+</html>
